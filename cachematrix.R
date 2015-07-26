@@ -22,8 +22,8 @@ makeCacheMatrix <- function(x = matrix()) {
   #gets the inverse value just calculated
   getinverse <- function() m_inverse
   ##Creatign list of functions which will be called in function below
-  ##input values for following function below are the get and set functions by which we  calculated and stored the inverse in the cache
-  input<-list(set = set, get = get,
+  ##list functions for calculating inverse matrix
+  list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
 }
@@ -31,7 +31,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Function for getting cache of matrix x
 
-cacheSolve <- function(input) {
+cacheSolve <- function(x,...) {
         ## Getting inverse value calcuated in makeCacheMatrix function above
 
     m_inverse <- x$getinverse()
